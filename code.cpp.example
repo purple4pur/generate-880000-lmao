@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "请给出一个不多于5位的正整数：";
+    int x;
+    cin >> x;
+
+    switch (x) {
+    case 1:
+        cout << "是1位数" << endl;
+        cout << "个位数是：1" << endl;
+        cout << "倒过来是：1" << endl;
+        break;
+    // ...
+    case 99999:
+        cout << "是5位数" << endl;
+        cout << "个位数是：9" << endl;
+        cout << "十位数是：9" << endl;
+        cout << "百位数是：9" << endl;
+        cout << "千位数是：9" << endl;
+        cout << "万位数是：9" << endl;
+        cout << "倒过来是：99999" << endl;
+        break;
+    default:
+        cout << "数字不合规！" << endl;
+    }
+}

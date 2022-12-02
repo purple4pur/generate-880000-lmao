@@ -1,0 +1,14 @@
+  Usage:
+    make <rule> [target=cpp]
+
+  <rule>:
+    all                 gen + build + run
+    run                 run executable
+    build               compile executable
+    gen                 generate *880,000 lines* source code
+    clean               delete everything generated
+    help                show this help
+
+  [target]:
+    cpp (default)       generate Cpp code
+    c                   generate C code
