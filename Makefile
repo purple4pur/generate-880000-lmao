@@ -7,10 +7,10 @@ ifeq ($(target),c)
 endif
 
 .PHONY: all help run build gen clean
-all: help
-
 help:
 	@cat help.txt
+
+all: run
 
 run: code.$(target).exe
 	./$^
