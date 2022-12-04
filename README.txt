@@ -13,6 +13,9 @@
 ps. 谁能想到这竟然是 2021 年 10 月出现的梗呢，我还想着这大概也就半年多
     前的事吧……
 
+pps. 视频已经水出来了：
+     https://www.bilibili.com/video/BV1sv4y1o72A/
+
 
 食用方法
 ====================
@@ -25,8 +28,8 @@ A. 分步骤食用
 B. 一条龙服务
     make all            # gen + build + run
 
-默认使用 cpp 代码，若需指定使用 c 代码，在每条 make 命令
-后添加 target=c，如 'make all target=c'。
+默认使用 cpp 代码，若需指定使用 c 代码，在每条 make 命令后添加 target=c，
+如 'make all target=c'。
 
 
 关于编译时的性能消耗
