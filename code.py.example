@@ -1,0 +1,19 @@
+# Python 3.10 or newer is required
+
+x = int( input("请给出一个不多于5位的正整数：") )
+match x:
+    case 1:
+        print("是1位数")
+        print("个位数是：1")
+        print("倒过来是：1")
+    # ...
+    case 99999:
+        print("是5位数")
+        print("个位数是：9")
+        print("十位数是：9")
+        print("百位数是：9")
+        print("千位数是：9")
+        print("万位数是：9")
+        print("倒过来是：99999")
+    case _:
+        print("数字不合规！")

@@ -1,6 +1,6 @@
 import sys
 
-def gen_cpp(loop_num):
+def gen_cpp(loop_num):          # {{{
     f = open("code.cpp", "w")
     f.write("""#include <iostream>
 using namespace std;
@@ -37,9 +37,10 @@ int main()
 }
 """)
     f.close()
+# }}}
 
 
-def gen_c(loop_num):
+def gen_c(loop_num):            # {{{
     f = open("code.c", "w")
     f.write("""#include <stdio.h>
 
@@ -75,6 +76,36 @@ int main()
 }
 """)
     f.close()
+# }}}
+
+
+def gen_py(loop_num):           # {{{
+    f = open("code.py", "w", encoding="utf-8")
+    f.write("""x = int( input("请给出一个不多于5位的正整数：") )
+match x:
+""")
+
+    for num in range(1, loop_num):
+        digits = []
+        tmp = num
+        while (tmp != 0):
+            digits.append(tmp % 10)
+            tmp //= 10
+        f.write("    case " + str(num) + ":\n")
+        f.write("        print(\"是" + str(len(digits)) + "位数\")\n")
+        for i, d in enumerate(digits):
+            pos = ["个", "十", "百", "千", "万"][i]
+            f.write("        print(\"" + pos + "位数是：" + str(d) + "\")\n")
+        f.write("        print(\"倒过来是：")
+        for d in digits:
+            f.write(str(d))
+        f.write("\")\n")
+
+    f.write("""    case _:
+        print("数字不合规！")
+""")
+    f.close()
+# }}}
 
 
 def main():
@@ -85,6 +116,8 @@ def main():
             gen_c(loop_num)
         elif target == "cpp":
             gen_cpp(loop_num)
+        elif target == "py":
+            gen_py(loop_num)
         else:
             sys.exit(f"ERROR: Unsupported target '{target}'")
     else:

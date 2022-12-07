@@ -10,5 +10,8 @@
     help                show this help
 
   [target]:
-    cpp (default)       generate Cpp code
-    c                   generate C code
+    cpp (default)       use Cpp code
+    c                   use C code
+    py                  use Python code
+    all                 (Only available for 'make gen')
+                        generate all source codes (c/cpp/py)
