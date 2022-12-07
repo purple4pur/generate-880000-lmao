@@ -85,6 +85,10 @@ def main():
             gen_c(loop_num)
         elif target == "cpp":
             gen_cpp(loop_num)
+        else:
+            sys.exit(f"ERROR: Unsupported target '{target}'")
+    else:
+        sys.exit("ERROR: Unmatched arguments")
 
 if __name__ == "__main__":
     main()
