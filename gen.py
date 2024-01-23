@@ -1,5 +1,14 @@
 import sys
 
+def num_digits(num: int);
+    digits = []
+    tmp = num
+    while (tmp != 0):
+        digits.append(tmp % 10)
+        tmp //= 10
+
+    return digits
+
 def gen_cpp(loop_num):          # {{{
     f = open("code.cpp", "w")
     f.write("""#include <iostream>
@@ -15,11 +24,7 @@ int main()
 """)
 
     for num in range(1, loop_num):
-        digits = []
-        tmp = num
-        while (tmp != 0):
-            digits.append(tmp % 10)
-            tmp //= 10
+        digits = num_digits(num)
         f.write("    case " + str(num) + ":\n")
         f.write("        cout << \"是" + str(len(digits)) + "位数\" << endl;\n")
         for i, d in enumerate(digits):
@@ -54,11 +59,7 @@ int main()
 """)
 
     for num in range(1, loop_num):
-        digits = []
-        tmp = num
-        while (tmp != 0):
-            digits.append(tmp % 10)
-            tmp //= 10
+        digits = num_digits(num)
         f.write("    case " + str(num) + ":\n")
         f.write("        printf(\"是" + str(len(digits)) + "位数\\n\");\n")
         for i, d in enumerate(digits):
@@ -86,11 +87,7 @@ match x:
 """)
 
     for num in range(1, loop_num):
-        digits = []
-        tmp = num
-        while (tmp != 0):
-            digits.append(tmp % 10)
-            tmp //= 10
+        digits = num_digits(num)
         f.write("    case " + str(num) + ":\n")
         f.write("        print(\"是" + str(len(digits)) + "位数\")\n")
         for i, d in enumerate(digits):
@@ -106,6 +103,9 @@ match x:
 """)
     f.close()
 # }}}
+
+def gen_rs(loop_num):
+    pass
 
 
 def main():
