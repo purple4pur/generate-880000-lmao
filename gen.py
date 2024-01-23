@@ -115,6 +115,26 @@ fn main() {
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let num = input.trim().parse::<u32>().unwrap();
+
+    match num {
+""")
+        for num in range(1, loop_num):
+            digits = num_digits(num)
+            f.write(f"        {num} => {{\n")
+            f.write("            println!(\"是" + str(len(digits)) + "位数\\n\");\n")
+            for i, d in enumerate(digits):
+                pos = ["个", "十", "百", "千", "万"][i]
+                f.write("            println!(\"" + pos + "位数是：" + str(d) + "\\n\");\n")
+            f.write("            println!(\"倒过来是：")
+            for d in digits:
+                f.write(str(d))
+            f.write("\\n\");\n")
+            f.write("        }\n")
+
+        f.write("""
+        _ => println!("数字不合规！");
+    }
+}
 """)
 
 def main():
