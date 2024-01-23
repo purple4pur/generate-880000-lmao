@@ -105,8 +105,17 @@ match x:
 # }}}
 
 def gen_rs(loop_num):
-    pass
-
+    with open("code.rs", "w", encoding="utf-8") as f:
+        f.write("""
+use std::io;
+use std::io::Write;
+fn main() {
+    print!("请给出一个不多于5位的正整数：");
+    io::stdout().flush().unwrap();
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let num = input.trim().parse::<u32>().unwrap();
+""")
 
 def main():
     if len(sys.argv) in (2, 3):
