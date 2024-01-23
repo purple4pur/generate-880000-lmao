@@ -1,6 +1,6 @@
 import sys
 
-def num_digits(num: int);
+def num_digits(num: int):
     digits = []
     tmp = num
     while (tmp != 0):
@@ -132,7 +132,7 @@ fn main() {
             f.write("        }\n")
 
         f.write("""
-        _ => println!("数字不合规！");
+        _ => println!("数字不合规！"),
     }
 }
 """)
@@ -147,6 +147,8 @@ def main():
             gen_cpp(loop_num)
         elif target == "py":
             gen_py(loop_num)
+        elif target == "rs":
+            gen_rs(loop_num)
         else:
             sys.exit(f"ERROR: Unsupported target '{target}'")
     else:
